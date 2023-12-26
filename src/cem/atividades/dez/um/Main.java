@@ -1,4 +1,4 @@
-package cem.atividades.um;
+package cem.atividades.dez.um;
 
 public class Main {
     /*
