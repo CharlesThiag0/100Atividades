@@ -2,11 +2,6 @@ package cem.atividades.dez.um;
 
 public class Soma {
 
-    /*
-    Escreva um programa que solicite ao usuário dois números e exiba a soma, subtração,
-     multiplicação e divisão entre eles.
-     */
-
     private int num01;
 
     private int num02;
@@ -23,4 +18,21 @@ public class Soma {
         System.out.printf("Multiplicação = %d\n", (num01 * num02));
         System.out.printf("Divisão = %d\n", (num01 / num02));
     }
+
+    public void mediaAritmedica() {
+        int total = num01 + num02;
+        System.out.printf("Média aritmédica de %d com %d é: %d\n", num01, num02, (total / 2));
+    }
+
+    public void mediaGeometrica(double numA, double numB, double numC) {
+        System.out.printf("Média geometrica é %.2f\n", Math.cbrt(numA * numB * numC));
+    }
+
+    public void imc (double altura, double peso){
+        altura *= altura;
+        System.out.printf("IMC: %.2f\n", (peso / altura ));
+    }
+
+
+
 }
