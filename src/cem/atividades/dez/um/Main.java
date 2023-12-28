@@ -15,6 +15,17 @@ public class Main {
         operacoes.calculoAreaPerimetro(12.0,8.0);
         operacoes.perimetroDeTriangulo(12, 14, 10, 16);
 
+        operacoes.velocidadeMediaETempo(70.0, 2);
+        operacoes.energiaCinetica(800, 20);
+        operacoes.forcaSobreUmObjeto(100, 2);
+        operacoes.distanciaPlanoCarteziano(2, 4,  3, 1);
+        operacoes.volumeEsfera(3);
+        operacoes.separarPalavra("Charles");
+        operacoes.substituirLetras("charles thiago dos santos oliveira");
+        operacoes.palindromo("kayak");
+        operacoes.anagrama("celia", "alice");
+        operacoes.primeiroNome("Charles thiago dos Santos Oliveira");
+
     }
 
 }
