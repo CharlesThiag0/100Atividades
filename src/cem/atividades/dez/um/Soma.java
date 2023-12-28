@@ -3,6 +3,8 @@ package cem.atividades.dez.um;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Soma {
 
@@ -163,8 +165,46 @@ public class Soma {
     }
 
     // 23
-    /*
-    Faça um programa que receba uma frase e exiba a quantidade de espaços em branco presentes na mesma.
-     */
+    public void contagemEspaco(String frase) {
+        int quantidade = 0;
+        for (int i = 0; i < frase.length(); i++) {
+            if(frase.charAt(i) == ' '){
+                quantidade ++;
+            }
+        }
+        System.out.printf("Quantidade de espaços: %d\n", quantidade);
+    }
+
+    // 24
+    public void cotarVogais(String frase) {
+        Set<Character> vogais =new HashSet();
+        vogais.add('a');
+        vogais.add('e');
+        vogais.add('i');
+        vogais.add('o');
+        vogais.add('u');
+
+        String str = frase.toLowerCase();
+
+        int cont = 0;
+        for (char teste : str.toCharArray()) {
+            if(vogais.contains(teste)) {
+                cont ++;
+            }
+        }
+        System.out.printf("Contagem de vogais: %d\n", cont);
+    }
+
+    // 25
+    public void ultimoSobreNome(String nomeCompleto) {
+        int ultimoSobrenome = nomeCompleto.lastIndexOf(" ");
+        char letra[] = nomeCompleto.toCharArray();
+        for(int i = ultimoSobrenome +1; i < nomeCompleto.length(); i++) {
+            System.out.print(letra[i]);
+        }
+    }
+
+
+
 
 }

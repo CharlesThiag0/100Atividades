@@ -1,5 +1,7 @@
 package cem.atividades.dez.um;
 
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -25,6 +27,9 @@ public class Main {
         operacoes.palindromo("kayak");
         operacoes.anagrama("celia", "alice");
         operacoes.primeiroNome("Charles thiago dos Santos Oliveira");
+        operacoes.contagemEspaco("Charles thiago dos Santos Oliveira");
+        operacoes.cotarVogais("pedro");
+        operacoes.ultimoSobreNome("Charles thiago SANTOS Oliveira");
 
     }
 
