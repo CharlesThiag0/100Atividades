@@ -1,10 +1,8 @@
 package cem.atividades.dez.um;
 
 import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
+import java.time.LocalDate;
+import java.util.*;
 
 public class Soma {
 
@@ -136,15 +134,15 @@ public class Soma {
     // 21
     public void anagrama(String primeiraPalavra, String segundaPalavra) {
         // verificar se tem o mesmo tamanho
-        if(primeiraPalavra.length() != segundaPalavra.length()) {
+        if (primeiraPalavra.length() != segundaPalavra.length()) {
             System.out.println("Não é um anagrama");
-           return;
+            return;
         }
         // definir tamanho do Array
         int[] frequencia01 = new int[primeiraPalavra.length()];
         int[] frequencia02 = new int[segundaPalavra.length()];
         // for para armazenar os caracteres
-        for(int i = 0; i < primeiraPalavra.length(); i++){
+        for (int i = 0; i < primeiraPalavra.length(); i++) {
             frequencia01[i] = primeiraPalavra.charAt(i);
             frequencia02[i] = segundaPalavra.charAt(i);
         }
@@ -152,7 +150,7 @@ public class Soma {
         Arrays.sort(frequencia01);
         Arrays.sort(frequencia02);
         // equals para verificar se o conteudo são iguais
-        if(Arrays.equals(frequencia01, frequencia02)) {
+        if (Arrays.equals(frequencia01, frequencia02)) {
             System.out.println("Anagrama");
         } else {
             System.out.println("Não anagrama");
@@ -168,8 +166,8 @@ public class Soma {
     public void contagemEspaco(String frase) {
         int quantidade = 0;
         for (int i = 0; i < frase.length(); i++) {
-            if(frase.charAt(i) == ' '){
-                quantidade ++;
+            if (frase.charAt(i) == ' ') {
+                quantidade++;
             }
         }
         System.out.printf("Quantidade de espaços: %d\n", quantidade);
@@ -177,7 +175,7 @@ public class Soma {
 
     // 24
     public void cotarVogais(String frase) {
-        Set<Character> vogais =new HashSet();
+        Set<Character> vogais = new HashSet();
         vogais.add('a');
         vogais.add('e');
         vogais.add('i');
@@ -188,8 +186,8 @@ public class Soma {
 
         int cont = 0;
         for (char teste : str.toCharArray()) {
-            if(vogais.contains(teste)) {
-                cont ++;
+            if (vogais.contains(teste)) {
+                cont++;
             }
         }
         System.out.printf("Contagem de vogais: %d\n", cont);
@@ -199,12 +197,68 @@ public class Soma {
     public void ultimoSobreNome(String nomeCompleto) {
         int ultimoSobrenome = nomeCompleto.lastIndexOf(" ");
         char letra[] = nomeCompleto.toCharArray();
-        for(int i = ultimoSobrenome +1; i < nomeCompleto.length(); i++) {
+        for (int i = ultimoSobrenome + 1; i < nomeCompleto.length(); i++) {
             System.out.print(letra[i]);
         }
     }
 
+    //28
+    public void maiorEntreTres(double numA, double numB, double numC) {
+        if (numA > numB && numA > numC) {
+            System.out.println(numA);
+        } else if (numB > numC) {
+            System.out.println(numB);
+        } else {
+            System.out.println(numC);
+        }
+    }
 
+    // 29
+    public void imparPar(int num) {
+        if (num % 2 == 0) {
+            System.out.printf("O numero %d é par\n", num);
+        } else {
+            System.out.printf("O numero %d é ímpar\n", num);
+        }
+    }
 
+    // 36
+    public void maiorIdade(String usuario01, int idadeUsuario01, String usuario02, int idadeUsuario02,
+                           String usuario03, int idadeUsuario03) {
+        Map<String, Integer> usuarios = new HashMap<>();
+        usuarios.put(usuario01, idadeUsuario01);
+        usuarios.put(usuario02, idadeUsuario02);
+        usuarios.put(usuario03, idadeUsuario03);
 
+        usuarios.forEach((s, integer) -> {
+            if (integer >= 18) {
+                System.out.printf("É maior de idade: %s\n", s);
+            } else {
+                System.out.printf("Não é maior de idade: %s\n", s);
+            }
+        });
+    }
+
+    // 37
+    public void triangulo(double ladoA, double ladoB, double ladoC) {
+        ladoA += ladoB;
+        if (ladoA > ladoC) {
+            System.out.println("É triângulo");
+        } else {
+            System.out.println("Não é um triângulo");
+        }
+    }
+
+    // 38
+    public void poderaVotar(int anoDeNascimento, int mes, int dia) {
+        LocalDate dataDoUsuario = LocalDate.of(anoDeNascimento, mes, dia);
+        LocalDate dataDoSistema = LocalDate.now();
+
+        if (dataDoSistema.getYear() - dataDoUsuario.getYear() >= 16) {
+            System.out.println("Pode votar");
+        } else {
+            System.out.println("Não pode votar");
+        }
+
+    }
 }

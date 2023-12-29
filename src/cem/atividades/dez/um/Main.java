@@ -31,6 +31,12 @@ public class Main {
         operacoes.cotarVogais("pedro");
         operacoes.ultimoSobreNome("Charles thiago SANTOS Oliveira");
 
+        operacoes.maiorEntreTres(12.0, 11.0, 15.0);
+        operacoes.imparPar(11);
+        operacoes.maiorIdade("Charles", 22, "Thiago", 22, "Santos", 11);
+        operacoes.triangulo(12.0, 10.12, 20.0);
+        operacoes.poderaVotar(2008, 06, 10);
+
     }
 
 }
