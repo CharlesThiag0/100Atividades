@@ -38,9 +38,9 @@ public class Soma {
     }
 
     // 5
-    public void imc(double altura, double peso) {
+    public double imc(double altura, double peso) {
         altura *= altura;
-        System.out.printf("IMC: %.2f\n", (peso / altura));
+        return peso / altura;
     }
 
     //  6
@@ -261,4 +261,60 @@ public class Soma {
         }
 
     }
+
+    // 39
+    public void votacao(int idade) {
+        if(idade >= 18 || idade >= 69) {
+            System.out.println("Seu voto é obrigatorio!");
+        } else if(idade == 16 || idade == 17 || idade >= 70) {
+            System.out.println("Seu voto é opcional");
+        } else {
+            System.out.println("Não esta apta a votar");
+        }
+    }
+
+    // 41
+    public void diaUtil(String dia) {
+        String diaMaiusculo = dia.toUpperCase();
+        Set<String> diasUteis = new HashSet<>();
+        diasUteis.add("SEGUNDA");
+        diasUteis.add("TERCA");
+        diasUteis.add("QUARTA");
+        diasUteis.add("QUINTA");
+        diasUteis.add("SEXTA");
+
+        if (diasUteis.contains(diaMaiusculo)){
+            System.out.println("Dia util");
+        } else if(diaMaiusculo.equals("SABADO") || diaMaiusculo.equals("DOMINGO")) {
+            System.out.println("Fim de semana");
+        } else {
+            System.out.println("Data inválida");
+        }
+
+    }
+
+    // 42
+    public void indiceImc(double altura , double peso) {
+        double valorImc = imc(altura, peso);
+
+        if(valorImc == 17 || valorImc < 18.49) {
+            System.out.println("Baixo peso");
+
+        } else if (valorImc < 24.99) {
+            System.out.println("Peso normal");
+
+        } else if (valorImc < 29.99) {
+            System.out.println("Sobrepeso");
+
+        } else if (valorImc < 34.99) {
+            System.out.println("Obesidade grau I");
+
+        } else if(valorImc < 39.99) {
+            System.out.println("Obesidade grau II");
+
+        }
+
+    }
+
+
 }

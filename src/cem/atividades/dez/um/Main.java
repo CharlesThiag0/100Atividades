@@ -36,6 +36,10 @@ public class Main {
         operacoes.maiorIdade("Charles", 22, "Thiago", 22, "Santos", 11);
         operacoes.triangulo(12.0, 10.12, 20.0);
         operacoes.poderaVotar(2008, 06, 10);
+        operacoes.votacao(16);
+        operacoes.diaUtil("domingO");
+        operacoes.indiceImc(1.84, 70);
+
 
     }
 
