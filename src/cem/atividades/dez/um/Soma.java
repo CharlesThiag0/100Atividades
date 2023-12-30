@@ -264,9 +264,9 @@ public class Soma {
 
     // 39
     public void votacao(int idade) {
-        if(idade >= 18 || idade >= 69) {
+        if (idade >= 18 || idade >= 69) {
             System.out.println("Seu voto é obrigatorio!");
-        } else if(idade == 16 || idade == 17 || idade >= 70) {
+        } else if (idade == 16 || idade == 17 || idade >= 70) {
             System.out.println("Seu voto é opcional");
         } else {
             System.out.println("Não esta apta a votar");
@@ -283,9 +283,9 @@ public class Soma {
         diasUteis.add("QUINTA");
         diasUteis.add("SEXTA");
 
-        if (diasUteis.contains(diaMaiusculo)){
+        if (diasUteis.contains(diaMaiusculo)) {
             System.out.println("Dia util");
-        } else if(diaMaiusculo.equals("SABADO") || diaMaiusculo.equals("DOMINGO")) {
+        } else if (diaMaiusculo.equals("SABADO") || diaMaiusculo.equals("DOMINGO")) {
             System.out.println("Fim de semana");
         } else {
             System.out.println("Data inválida");
@@ -294,10 +294,10 @@ public class Soma {
     }
 
     // 42
-    public void indiceImc(double altura , double peso) {
+    public void indiceImc(double altura, double peso) {
         double valorImc = imc(altura, peso);
 
-        if(valorImc == 17 || valorImc < 18.49) {
+        if (valorImc == 17 || valorImc < 18.49) {
             System.out.println("Baixo peso");
 
         } else if (valorImc < 24.99) {
@@ -309,9 +309,32 @@ public class Soma {
         } else if (valorImc < 34.99) {
             System.out.println("Obesidade grau I");
 
-        } else if(valorImc < 39.99) {
+        } else if (valorImc < 39.99) {
             System.out.println("Obesidade grau II");
 
+        }
+
+    }
+
+    // 49
+    /*
+    Escreva um programa que exiba os números pares de 1 a 50 e os
+    números ímpares de 51 a 100 utilizando um laço de repetição.
+     */
+    public void paresImpares() {
+        int num = 1;
+        System.out.println("Pares: ");
+        for(int i = 1; i <= 50; i++) {
+            if (i % 2 == 0) {
+                System.out.print(i + " ");
+            }
+        }
+
+        System.out.println("\nImpares: ");
+        for (int j = 51; j <= 100; j ++){
+            if (j % 2 != 0) {
+                System.out.print(j + " ");
+            }
         }
 
     }

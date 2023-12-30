@@ -40,6 +40,7 @@ public class Main {
         operacoes.diaUtil("domingO");
         operacoes.indiceImc(1.84, 70);
 
+        operacoes.paresImpares();
 
     }
 
