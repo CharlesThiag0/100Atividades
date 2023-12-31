@@ -382,8 +382,44 @@ public class Soma {
           segundo = primero;
           System.out.print(" " + resultado);
       }
-
+        System.out.println();
     }
+
+    // 64
+    public void fraseContraria(String frase) {
+    StringBuilder fraseReversa = new StringBuilder(frase);
+        System.out.printf("%s para : %s\n", frase, fraseReversa.reverse());
+    }
+
+    // 64
+    /*
+    Faça um programa que determine o menor múltiplo comum
+    (MMC) entre dois números informados pelo usuário.
+     */
+    public void mmc(int num01, int num02) {
+        Set<Integer> numerosPrimos = new LinkedHashSet<>();
+        numerosPrimos.add(2);
+        numerosPrimos.add(3);
+        numerosPrimos.add(5);
+        numerosPrimos.add(7);
+
+        int mmc =  1;
+
+        for (int teste : numerosPrimos) {
+            while (num01 % teste == 0 || num02 % teste == 0) {
+                if (teste != 0 && num01 % teste == 0) {
+                    num01 /= teste;
+                }
+
+                if (teste != 0 && num02 % teste == 0) {
+                    num02 /= teste;
+                }
+                mmc *= teste;
+            }
+        }
+        System.out.println("MMC : " + mmc);
+    }
+
 
 
 

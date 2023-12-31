@@ -45,6 +45,8 @@ public class Main {
         operacoes.numerosPrimos(100);
         operacoes.quadrado(4, 0);
         operacoes.fibonacci(10);
+        operacoes.fraseContraria("CHARLES THIAGO");
+        operacoes.mmc(10, 45);
     }
 
 }
