@@ -41,7 +41,10 @@ public class Main {
         operacoes.indiceImc(1.84, 70);
 
         operacoes.paresImpares();
-
+        operacoes.tabuada();
+        operacoes.numerosPrimos(100);
+        operacoes.quadrado(4, 0);
+        operacoes.fibonacci(10);
     }
 
 }

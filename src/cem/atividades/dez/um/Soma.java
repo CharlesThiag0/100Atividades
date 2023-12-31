@@ -317,10 +317,6 @@ public class Soma {
     }
 
     // 49
-    /*
-    Escreva um programa que exiba os números pares de 1 a 50 e os
-    números ímpares de 51 a 100 utilizando um laço de repetição.
-     */
     public void paresImpares() {
         int num = 1;
         System.out.println("Pares: ");
@@ -338,6 +334,57 @@ public class Soma {
         }
 
     }
+
+    // 51
+    public void tabuada() {
+        for (int i = 1; i <= 10; i++){
+            for(int j = 1; j <=10; j++) {
+                System.out.printf("\n%d X %d = %d\n", i, j, (i * j));
+            }
+        }
+    }
+
+    // 55
+    public void numerosPrimos(int num) {
+        System.out.println("Numeros primos: ");
+        for(int i = 2; i <= num; i++) {
+         if(i % 2 != 0 && i % 3 != 0 && i % 5 != 0 && i % 7 != 0){
+             System.out.print(i + ", ");
+         } else if (i  == 2 ||i == 3 || i == 5 || i == 7) {
+             System.out.print(i + ", ");
+         }
+        }
+        System.out.println();
+    }
+
+    // 58
+    public void quadrado(int tamanho, int num) {
+        int matriz[][] = new int[tamanho][tamanho];
+
+        for (int i = 0; i < matriz.length; i++) {
+            for(int j = 0; j < matriz[i].length; j++) {
+                matriz[i][j] = num;
+                System.out.print(matriz[i][j] + "   ");
+            }
+            System.out.println();
+        }
+
+    }
+
+    // 60
+    public void fibonacci(int num) {
+        //0p 1r, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ...
+      int primero = 0, segundo = 1, resultado = 0;
+        System.out.print("Fibonacci: ");
+      for (int i = 0; i <= num; i++) {
+          primero = resultado;
+          resultado = primero + segundo;
+          segundo = primero;
+          System.out.print(" " + resultado);
+      }
+
+    }
+
 
 
 }
