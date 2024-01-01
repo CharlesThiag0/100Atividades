@@ -391,11 +391,7 @@ public class Soma {
         System.out.printf("%s para : %s\n", frase, fraseReversa.reverse());
     }
 
-    // 64
-    /*
-    Faça um programa que determine o menor múltiplo comum
-    (MMC) entre dois números informados pelo usuário.
-     */
+    // 67
     public void mmc(int num01, int num02) {
         Set<Integer> numerosPrimos = new LinkedHashSet<>();
         numerosPrimos.add(2);
@@ -407,17 +403,50 @@ public class Soma {
 
         for (int teste : numerosPrimos) {
             while (num01 % teste == 0 || num02 % teste == 0) {
-                if (teste != 0 && num01 % teste == 0) {
+                if (num01 % teste == 0) {
                     num01 /= teste;
                 }
 
-                if (teste != 0 && num02 % teste == 0) {
+                if (num02 % teste == 0) {
                     num02 /= teste;
                 }
                 mmc *= teste;
             }
         }
         System.out.println("MMC : " + mmc);
+    }
+
+    // 68
+    public void mdc(int num01, int num02) {
+        int mdc = 1;
+
+        Set<Integer> primos = new LinkedHashSet<>();
+        primos.add(2);
+        primos.add(3);
+        primos.add(5);
+        primos.add(7);
+
+        for (int testePrimos : primos) {
+
+            while(num01 % testePrimos == 0 || num02 % testePrimos == 0) {
+
+                if(num01 % testePrimos == 0 && num02 % testePrimos == 0) {
+                    num01 /= testePrimos;
+                    num02 /= testePrimos;
+
+                    mdc *= testePrimos;
+                }
+
+                if (num01 % testePrimos == 0) {
+                    num01 /= testePrimos;
+                }
+
+                if (num02 % testePrimos == 0) {
+                    num02 /= testePrimos;
+                }
+            }
+        }
+        System.out.printf("MDC : %d\n", mdc);
     }
 
 

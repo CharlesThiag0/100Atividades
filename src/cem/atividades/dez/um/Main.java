@@ -47,6 +47,7 @@ public class Main {
         operacoes.fibonacci(10);
         operacoes.fraseContraria("CHARLES THIAGO");
         operacoes.mmc(10, 45);
+        operacoes.mdc(45, 75);
     }
 
 }
