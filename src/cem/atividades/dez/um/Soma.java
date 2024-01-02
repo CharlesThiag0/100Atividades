@@ -492,5 +492,66 @@ public class Soma {
         return digito2 == Integer.parseInt(String.valueOf(Cpf.charAt(10)));
     }
 
+    // 70
+    public int somaArray(int tamanho) {
+        int total = 0;
+        int vect[] = new int[tamanho];
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Digite seus numeros:");
+        for (int i = 0; i < vect.length; i++) {
+            vect[i] = sc.nextInt();
+            total += vect[i];
+        }
+        sc.close();
+
+        return total;
+    }
+
+    // 73
+    public int valores2Vetores(int tamanhoA, int tamanhoB) {
+        int totalVect = 0;
+
+        int arrayA[] = new int[tamanhoA];
+        int arrayB[] = new int[tamanhoB];
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Digite numeros arrayA");
+        // Array 01
+        for(int i = 0; i < arrayA.length; i ++) {
+            arrayA[i] = sc.nextInt();
+            totalVect += arrayA[i];
+        }
+        // Array 02
+        System.out.println("Digite numeros arrayB");
+        for(int i = 0; i < arrayB.length; i++){
+            arrayB[i] = sc.nextInt();
+            totalVect += arrayB[i];
+        }
+
+        return totalVect;
+    }
+
+    // 75
+    /*
+    Escreva um programa que leia um vetor de números inteiros e exiba os elementos na ordem inversa.
+     */
+    public void arrayInverso(int tamanho) {
+        int array[] = new int[tamanho];
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Digite seus numero a seguir");
+        for(int i = 0; i < array.length; i++) {
+            array[i] = sc.nextInt();;
+        }
+
+        for (int i = array.length -1; i >= 0; i --) {
+            System.out.print(array[i] + " ");
+        }
+    }
+
+
+
 
 }
