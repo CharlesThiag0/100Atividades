@@ -48,6 +48,12 @@ public class Main {
         operacoes.fraseContraria("CHARLES THIAGO");
         operacoes.mmc(10, 45);
         operacoes.mdc(45, 75);
+        if(operacoes.verificarCpf("52367372063")){
+            System.out.println("Válido");
+        } else {
+            System.out.println("Inválido");
+        }
+
     }
 
 }

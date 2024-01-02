@@ -450,6 +450,47 @@ public class Soma {
     }
 
 
+    // 69
+    public boolean verificarCpf(String Cpf) {
+        if(Cpf.length() != 11) {
+            return false;
+        }
+
+        // Verificar se todos os caracteres são números
+        for(int i = 0; i < Cpf.length();  i++){
+            if(!Character.isDigit(Cpf.charAt(i))) {
+                return false;
+            }
+        }
+
+        int soma = 0;
+        int resto;
+
+        // Verificar os dígitos verificadores
+        for(int i = 0; i < 9; i++){
+            soma += Integer.parseInt(String.valueOf(Cpf.charAt(i))) * (10 - i);
+        }
+
+        resto = soma % 11;
+
+        int digito1 = (resto < 2) ? 0 : 11 - resto;
+
+        if(digito1 != Integer.parseInt(String.valueOf(Cpf.charAt(9)))){
+            return false;
+        }
+
+        soma = 0;
+
+        for(int i = 0; i < 10; i++){
+            soma += Integer.parseInt(String.valueOf(Cpf.charAt(i))) * (11 - i);
+        }
+
+        resto = soma % 11;
+
+        int digito2 = (resto < 2) ? 0: 11 - resto;
+
+        return digito2 == Integer.parseInt(String.valueOf(Cpf.charAt(10)));
+    }
 
 
 }
