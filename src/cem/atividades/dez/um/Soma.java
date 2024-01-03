@@ -534,9 +534,6 @@ public class Soma {
     }
 
     // 75
-    /*
-    Escreva um programa que leia um vetor de números inteiros e exiba os elementos na ordem inversa.
-     */
     public void arrayInverso(int tamanho) {
         int array[] = new int[tamanho];
         Scanner sc = new Scanner(System.in);
@@ -551,6 +548,102 @@ public class Soma {
         }
     }
 
+    // 80
+    public void matriz3x3(){
+        Scanner sc = new Scanner(System.in);
+        int matriz3x3[][] = new int[3][3];
+
+        int totalDiagonal = 0;
+
+        for (int i = 0; i < matriz3x3.length; i++) {
+            for (int j = 0; j < matriz3x3[i].length; j++) {
+                System.out.println("Digite seu numero");
+                matriz3x3[i][j] = sc.nextInt();
+
+                if(i == j){
+                    totalDiagonal +=  matriz3x3[i][j];
+                }
+            }
+        }
+
+        System.out.println("Total diagonal da matriz: " + totalDiagonal);
+    }
+
+    // 81
+    public void matriz4x4() {
+        int matriz4x4[][] = new int[4][4];
+
+        Random radom = new Random();
+
+        for(int i = 0; i < matriz4x4.length; i++) {
+            for(int j = 0; j < matriz4x4[i].length; j++) {
+                matriz4x4[i][j] = radom.nextInt(100  + 1);
+            }
+        }
+
+        for(int i = 0; i < matriz4x4.length; i++) {
+            for(int j = 0; j < matriz4x4[i].length; j++) {
+                System.out.print( matriz4x4[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    // 83
+    public void matriz5x5(){
+        int matriz[][] = new int[5][5];
+        Random radom = new Random();
+
+        for(int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[i].length; j++) {
+                matriz[i][j] = radom.nextInt(100 + 1);
+            }
+        }
+
+        for(int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[i].length; j++) {
+                System.out.print(matriz[i][j] + "  ");
+            }
+            System.out.println();
+        }
+
+        int valor = matriz[0][0];
+        String posicao = "na linha: 0, coluna: 0";
+        for(int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[i].length; j++) {
+
+                if(valor < matriz[i][j]) {
+                    valor = matriz[i][j];
+                    posicao = " na linha: "+i+", coluna: "+j;
+                }
+
+            }
+        }
+        System.out.println("valor: " + valor + posicao);
+    }
+
+    // 86
+    public void determinanteMatriz() {
+        int matriz[][] = new int[3][3];
+
+        Random radom = new Random();
+
+        for (int i = 0; i < matriz.length; i++) {
+            for(int j = 0; j < matriz[i].length; j++) {
+                matriz[i][j] = radom.nextInt(10 + 1);
+            }
+        }
+
+        int diagonalPrincipal = matriz[0][0] * matriz[1][1] * matriz[2][2];
+        diagonalPrincipal += matriz[0][1] * matriz[1][2] * matriz[2][0];
+        diagonalPrincipal += matriz[2][0] * matriz[0][2] * matriz[1][1];
+
+        int diagonalSegundaria = matriz[0][2] * matriz[1][1] * matriz[2][0];
+        diagonalSegundaria = matriz[0][0] * matriz[1][2] * matriz[2][1];
+        diagonalSegundaria = matriz[0][1] * matriz[1][0] * matriz[2][2];
+
+        System.out.println("Determinante: " + (diagonalPrincipal - diagonalSegundaria));
+    }
 
 
 

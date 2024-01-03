@@ -56,7 +56,12 @@ public class Main {
 
        // System.out.println(operacoes.somaArray(5));
        // System.out.println(operacoes.valores2Vetores(5, 3));
-        operacoes.arrayInverso(5);
+       // operacoes.arrayInverso(5);
+        // operacoes.matriz3x3();
+       // operacoes.matriz5x5();
+
+        operacoes.determinanteMatriz();
+
 
 
     }
