@@ -60,10 +60,27 @@ public class Main {
         // operacoes.matriz3x3();
        // operacoes.matriz5x5();
 
-        operacoes.determinanteMatriz();
+      //  operacoes.determinanteMatriz();
 
+        Scanner scanner = new Scanner(System.in);
 
+        System.out.println("Informe as dimensões da matriz (m x n): ");
+        int m = scanner.nextInt();
+        int n = scanner.nextInt();
 
+        int[][] campoMinado = new int[m][n];
+
+        System.out.println("Informe a matriz do campo minado (0 para campo neutro, 1 para mina): ");
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                campoMinado[i][j] = scanner.nextInt();
+            }
+        }
+
+        int[][] resultado = operacoes.calcularVizinhanca(campoMinado);
+
+        System.out.println("Resultado:");
+        operacoes.imprimirMatriz(resultado);
     }
 
 }

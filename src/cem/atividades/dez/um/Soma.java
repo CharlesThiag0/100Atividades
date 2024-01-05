@@ -645,6 +645,85 @@ public class Soma {
         System.out.println("Determinante: " + (diagonalPrincipal - diagonalSegundaria));
     }
 
+    // 88
+    public boolean matrizDiagonal() {
+        int matriz[][] = new int[4][4];
+
+        // populando matriz
+        Random radom = new Random();
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[i].length; j++) {
+                matriz[i][j] = radom.nextInt(3);
+            }
+        }
+
+        // verificar
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[i].length; j++) {
+
+                if (i != j && matriz[i][j] != 0) {
+                    return false;
+                }
+            }
+        }
+
+        return true;
+    }
+
+    // 89
+    /*
+    Faça um programa que leia uma matriz m x n, indicando o local onde há minas de
+     um jogo de campo minado (sendo 0 para campo neutro, e 1 para locais onde haveriam minas)
+     , e o programa deveria retornar uma matriz indicando, para cada posição,
+      o número de minas nas casas vizinhas.
+     */
+    public int[][] calcularVizinhanca(int[][] campoMinado) {
+        int m = campoMinado.length;
+        int n = campoMinado[0].length;
+        int [][] resultado = new int[m][n];
+
+        for(int i = 0; i < m; i++) {
+            for(int j = 0; j < n; j++) {
+                if(campoMinado[i][j] == 1){
+                    resultado[i][j] = -1;
+                    continue;
+                }
+
+                int conbtagemDeMinas = contarMinasVizinhas(campoMinado, i, j);
+                resultado[i][j] = conbtagemDeMinas;
+            }
+        }
+
+        return resultado;
+    }
+
+    public int contarMinasVizinhas(int[][] campoMinado, int linha, int coluna) {
+        int contagem = 0;
+        int m  = campoMinado.length;
+        int n = campoMinado[0].length;
+
+        for(int i = Math.max(0, linha - 1); i <= Math.min(linha + 1, m - 1); i ++){
+            for(int j = Math.max(0, coluna - 1); j <= Math.min(coluna + 1, n -1); j++){
+                if(i != linha || j != coluna){
+                    if(campoMinado[i][j] == 1){
+                        contagem ++;
+                    }
+                }
+            }
+        }
+
+        return contagem;
+    }
+
+    public void imprimirMatriz(int[][] matriz) {
+        for(int[] linha : matriz) {
+            for(int elemento : linha){
+                System.out.println(elemento + " ");
+            }
+            System.out.println();
+        }
+    }
+
 
 
 }
