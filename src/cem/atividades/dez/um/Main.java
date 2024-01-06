@@ -61,8 +61,7 @@ public class Main {
        // operacoes.matriz5x5();
 
       //  operacoes.determinanteMatriz();
-
-        Scanner scanner = new Scanner(System.in);
+        /*Scanner scanner = new Scanner(System.in);
 
         System.out.println("Informe as dimensões da matriz (m x n): ");
         int m = scanner.nextInt();
@@ -80,7 +79,11 @@ public class Main {
         int[][] resultado = operacoes.calcularVizinhanca(campoMinado);
 
         System.out.println("Resultado:");
-        operacoes.imprimirMatriz(resultado);
+        operacoes.imprimirMatriz(resultado);*/
+
+        System.out.println(operacoes.fatorialRecursivo(5));
+
+
     }
 
 }

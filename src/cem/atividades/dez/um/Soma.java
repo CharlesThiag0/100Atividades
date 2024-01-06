@@ -671,12 +671,6 @@ public class Soma {
     }
 
     // 89
-    /*
-    Faça um programa que leia uma matriz m x n, indicando o local onde há minas de
-     um jogo de campo minado (sendo 0 para campo neutro, e 1 para locais onde haveriam minas)
-     , e o programa deveria retornar uma matriz indicando, para cada posição,
-      o número de minas nas casas vizinhas.
-     */
     public int[][] calcularVizinhanca(int[][] campoMinado) {
         int m = campoMinado.length;
         int n = campoMinado[0].length;
@@ -696,7 +690,7 @@ public class Soma {
 
         return resultado;
     }
-
+    // 89
     public int contarMinasVizinhas(int[][] campoMinado, int linha, int coluna) {
         int contagem = 0;
         int m  = campoMinado.length;
@@ -714,7 +708,7 @@ public class Soma {
 
         return contagem;
     }
-
+    // 89
     public void imprimirMatriz(int[][] matriz) {
         for(int[] linha : matriz) {
             for(int elemento : linha){
@@ -724,6 +718,13 @@ public class Soma {
         }
     }
 
+    // 90
+    public int fatorialRecursivo(int num) {
 
+        if (num == 0) {
+            return 1;
+        }
 
+        return num * fatorialRecursivo(num - 1);
+    }
 }
